@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,14 +14,14 @@
     "components",
     "utils"
   ],
-  "author": {
-    "name": "Nazarii"
-  },
+  "author": "Nazarii",
   "repository": {
     "type": "git",
     "url": "https://github.com/VeerJandy/suivante"
   },
   "devDependencies": {
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
     "turbo": "^1.13.2",
     "typescript": "^5.4.5"
   }

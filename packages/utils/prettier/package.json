@@ -1,0 +1,21 @@
+{
+  "name": "@suivante/prettier",
+  "description": "Prettier config",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["Prettier"],
+  "author": "Nazarii",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VeerJandy/suivante",
+    "directory": "packages/utils/prettier"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [".prettierrc.json"]
+}

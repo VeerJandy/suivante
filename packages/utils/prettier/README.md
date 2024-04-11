@@ -1,0 +1,2 @@
+# 🎉 Suivante Prettier
+#### Prettier config
