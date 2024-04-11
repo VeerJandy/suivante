@@ -1,12 +1,29 @@
 {
   "name": "suivante",
-  "version": "1.0.0",
-  "description": "",
+  "description": "UI components and utils for NextJS app",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "UI",
+    "NextJS",
+    "React",
+    "components",
+    "utils"
+  ],
+  "author": {
+    "name": "Nazarii"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VeerJandy/suivante"
+  },
+  "devDependencies": {
+    "turbo": "^1.13.2",
+    "typescript": "^5.4.5"
+  }
 }
