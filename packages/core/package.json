@@ -1,0 +1,37 @@
+{
+  "name": "suivante",
+  "description": "🚀 Beautiful and modern NextJS UI library",
+  "version": "0.1.0",
+  "license": "MIT",
+  "keywords": [
+    "Next",
+    "React",
+    "UI",
+    "Components"
+  ],
+  "author": "Nazarii",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VeerJandy/suivante",
+    "directory": "packages/components/button"
+  },
+  "clean-package": "../../clean-package.config.json",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup --dts"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "src/index.ts",
+  "dependencies": {
+    "@suivante/button": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "framer-motion": ">=11"
+  }
+}
