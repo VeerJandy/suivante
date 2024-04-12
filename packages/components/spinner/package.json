@@ -1,6 +1,6 @@
 {
-  "name": "@suivante/button",
-  "description": "Button UI component",
+  "name": "@suivante/spinner",
+  "description": "Spinner UI component",
   "version": "0.1.0",
   "license": "MIT",
   "keywords": [
@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/VeerJandy/suivante",
-    "directory": "packages/components/button"
+    "directory": "packages/components/spinner"
   },
   "devDependencies": {
     "@types/react": "^18.2.76",

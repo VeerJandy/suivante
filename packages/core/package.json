@@ -27,7 +27,8 @@
   ],
   "main": "src/index.ts",
   "dependencies": {
-    "@suivante/button": "workspace:*"
+    "@suivante/button": "workspace:*",
+    "@suivante/spinner": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18",
