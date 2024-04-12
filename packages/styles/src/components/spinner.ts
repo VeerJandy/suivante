@@ -1,7 +1,7 @@
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
 
-export const styleConfig = tv({
+export const spinnerStyle = tv({
   slots: {
     base: 'relative inline-flex flex-col items-center justify-center gap-2',
     wrapper: 'relative flex size-5',
@@ -33,4 +33,4 @@ export const styleConfig = tv({
   }
 })
 
-export type SpinnerVariants = VariantProps<typeof styleConfig>
+export type SpinnerVariants = VariantProps<typeof spinnerStyle>

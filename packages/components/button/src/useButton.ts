@@ -2,12 +2,11 @@ import type { ClassName, ReactRef } from '@suivante/react'
 import { useDOMRef } from '@suivante/react'
 import type { RippleProps } from '@suivante/ripple'
 import { useRipple } from '@suivante/ripple'
+import type { ButtonVariants } from '@suivante/styles'
+import { buttonStyle } from '@suivante/styles'
 import classNames from 'classnames'
 import type { MouseEvent } from 'react'
 import { useCallback } from 'react'
-
-import type { ButtonVariants } from '../styles/buttonStyle'
-import { styleConfig } from '../styles/buttonStyle'
 
 export interface UseButton extends ButtonVariants {
   ref?: ReactRef<HTMLButtonElement | null>
@@ -20,7 +19,7 @@ export interface UseButton extends ButtonVariants {
 export const useButton = (props: UseButton) => {
   const { className, isDisableRipple, type, ref, isLoading, isDisabled, onClick } = props
 
-  const allClassName = classNames(styleConfig(props), className)
+  const allClassName = classNames(buttonStyle(props), className)
   const domRef = useDOMRef(ref)
 
   const onClickHandler = useCallback(

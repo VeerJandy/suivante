@@ -5,8 +5,8 @@ import type { ReactNode } from 'react'
 import React from 'react'
 import { memo } from 'react'
 
-import type { UseButton } from '../hooks/useButton'
-import { useButton } from '../hooks/useButton'
+import type { UseButton } from './useButton'
+import { useButton } from './useButton'
 
 export interface ButtonProps extends UseButton {
   children?: ReactNode

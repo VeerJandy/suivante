@@ -28,7 +28,7 @@ const ghost = {
   white: 'border-white hover:!bg-white'
 }
 
-export const styleConfig = tv({
+export const buttonStyle = tv({
   base: [
     'tap-highlight-transparent',
     'relative',
@@ -184,4 +184,4 @@ export const styleConfig = tv({
   ]
 })
 
-export type ButtonVariants = VariantProps<typeof styleConfig>
+export type ButtonVariants = VariantProps<typeof buttonStyle>

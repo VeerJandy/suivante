@@ -3,7 +3,7 @@ import { AnimatePresence, domAnimation, LazyMotion, motion } from 'framer-motion
 import type { CSSProperties, Key } from 'react'
 import { memo } from 'react'
 
-import type { RippleType, UseRipple } from '../hooks/useRipple'
+import type { RippleType, UseRipple } from './useRipple'
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max)
 

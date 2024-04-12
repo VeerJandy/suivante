@@ -1,12 +1,12 @@
 'use client'
 
-import Button from './components/Button'
+import Button from './Button'
 
 // export types
-export type { ButtonProps } from './components/Button'
+export type { ButtonProps } from './Button'
 
 // export hooks
-export { useButton } from './hooks/useButton'
+export { useButton } from './useButton'
 
 // export component
 export { Button }

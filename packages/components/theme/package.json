@@ -17,19 +17,19 @@
     "directory": "packages/components/theme"
   },
   "devDependencies": {
-    "@suivante/ripple": "workspace:*",
-    "@suivante/spinner": "workspace:*",
     "@suivante/react": "workspace:*",
     "@types/react": "^18.2.76",
     "classnames": "^2.5.1",
     "framer-motion": "^11.0.28",
+    "next": "^14.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "peerDependencies": {
     "framer-motion": ">=11",
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "next": ">=14"
   },
   "clean-package": "../../../clean-package.config.json",
   "publishConfig": {

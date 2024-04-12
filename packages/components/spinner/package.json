@@ -22,7 +22,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-variants": "^0.2.1",
-    "@suivante/react": "workspace:*"
+    "@suivante/react": "workspace:*",
+    "@suivante/styles": "workspace:*"
   },
   "peerDependencies": {
     "framer-motion": ">=11",
