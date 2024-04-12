@@ -1,10 +1,12 @@
-import Spinner from './Spinner'
+'use client'
+
+import Spinner from './components/Spinner'
 
 // export types
-export type { SpinnerProps } from './Spinner'
+export type { SpinnerProps } from './components/Spinner'
 
 // export hooks
-export { useSpinner } from './useSpinner'
+export { useSpinner } from './hooks/useSpinner'
 
 // export component
 export { Spinner }
