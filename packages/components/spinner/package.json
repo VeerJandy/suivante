@@ -36,8 +36,6 @@
   "scripts": {
     "build": "tsup src --dts"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "src/index.ts"
 }

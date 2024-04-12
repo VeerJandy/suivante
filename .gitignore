@@ -32,6 +32,7 @@ sketch
 /out/
 /dist/
 **/dist/
+**/dist/**
 
 # production
 /build

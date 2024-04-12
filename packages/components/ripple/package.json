@@ -1,6 +1,6 @@
 {
   "name": "@suivante/ripple",
-  "description": "Spinner UI component",
+  "description": "Ripple UI component",
   "version": "0.1.0",
   "license": "MIT",
   "keywords": [
@@ -35,8 +35,6 @@
   "scripts": {
     "build": "tsup src --dts"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "src/index.ts"
 }
