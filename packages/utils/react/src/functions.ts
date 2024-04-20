@@ -10,3 +10,5 @@ export const getIsMobileServer = (): boolean => {
   const { device } = userAgent({ headers: headers() })
   return device.type === 'mobile'
 }
+
+export const isBrowser = typeof window !== 'undefined'
