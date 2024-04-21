@@ -1,27 +1,32 @@
-import { ClassName, setBodyLock } from '@suivante/react'
-import type { HeaderContentVariants } from '@suivante/styles'
-import { headerContentStyle } from '@suivante/styles'
-import classNames from 'classnames'
-import { ReactNode, useCallback } from 'react'
-import { useMemo } from 'react'
+import type { ClassName } from '@suivante/react'
+import { setBodyLock } from '@suivante/react'
+import type { ReactNode } from 'react'
+import { useCallback } from 'react'
 
 import { useHeaderContext } from './HeaderContext'
 
-export interface UseHeaderContent extends HeaderContentVariants {
+export interface UseHeaderNavigationItem {
+  content?: ReactNode
   children?: ReactNode
   className?: ClassName
-  content?: ReactNode
   isHideWhenOpen?: boolean
 }
 
-export const useHeaderContent = (props: UseHeaderContent) => {
+export const useHeaderNavigationItem = (props: UseHeaderNavigationItem) => {
   const {
     state: { isOpen, isMobile, content },
     functions: { setIsOpen, setContent }
   } = useHeaderContext()
 
   const onSetContent = useCallback(() => {
-    if (!props.content) return
+    if (!props.content) {
+      setContent(null)
+      setIsOpen(false)
+      setBodyLock({
+        isLockBody: false
+      })
+      return
+    }
 
     if (isMobile) {
       setContent(isOpen ? null : props.content)
@@ -45,15 +50,8 @@ export const useHeaderContent = (props: UseHeaderContent) => {
     setContent(props.content)
   }, [props.content, isOpen, content, isMobile])
 
-  const headerContentProps = useMemo(
-    () => ({
-      className: classNames(headerContentStyle(props), props.className)
-    }),
-    []
-  )
-
   return {
-    state: { headerContentProps, isOpen },
+    state: { isOpen },
     functions: { onSetContent }
   }
 }

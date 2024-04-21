@@ -1,6 +1,12 @@
 // Components
 export { Button } from '@suivante/button'
-export { Header, HeaderBurger, HeaderContent } from '@suivante/header'
+export {
+  Header,
+  HeaderBurger,
+  HeaderContentItem,
+  HeaderNavigation,
+  HeaderNavigationItem
+} from '@suivante/header'
 export { Spinner } from '@suivante/spinner'
 export { useGetThemeServer, useSetThemeServer, useTheme } from '@suivante/theme'
 

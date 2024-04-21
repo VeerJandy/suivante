@@ -38,13 +38,6 @@ export const useHeader = (props: UseHeader) => {
     }),
     []
   )
-  const headerBurgerProps = useMemo(
-    () => ({
-      className: headerSlotsStyle(props).burger(),
-      role: 'button'
-    }),
-    []
-  )
 
   return {
     state: {
@@ -52,11 +45,10 @@ export const useHeader = (props: UseHeader) => {
       isOpen,
       isMobile,
       headerProps,
-      headerWrapperProps,
-      headerBurgerProps
+      headerWrapperProps
     },
     functions: {
-      setIsOpen: () => setIsOpen(prev => !prev),
+      setIsOpen: (isOpen?: boolean) => setIsOpen(prev => isOpen ?? !prev),
       setContent
     }
   }

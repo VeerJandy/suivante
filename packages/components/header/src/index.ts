@@ -2,7 +2,9 @@
 
 import Header from './Header'
 import HeaderBurger from './HeaderBurger'
-import HeaderContent from './HeaderContent'
+import HeaderContentItem from './HeaderContentItem'
+import HeaderNavigation from './HeaderNavigation'
+import HeaderNavigationItem from './HeaderNavigationItem'
 
 // export types
 export type { HeaderProps } from './Header'
@@ -11,4 +13,4 @@ export type { HeaderProps } from './Header'
 export { useHeader } from './useHeader'
 
 // export component
-export { Header, HeaderBurger, HeaderContent }
+export { Header, HeaderBurger, HeaderContentItem, HeaderNavigation, HeaderNavigationItem }

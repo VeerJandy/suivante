@@ -32,12 +32,13 @@ export type HeaderVariants = VariantProps<typeof headerStyle>
 export const headerSlotsStyle = tv({
   slots: {
     wrapper: ['container', 'flex', 'gap-4', 'h-12'],
-    burger: ['z-40', 'relative', 'md:hidden', 'flex', 'size-12', 'items-center', 'justify-center']
+    burger: ['z-40', 'relative', 'md:hidden', 'flex', 'size-12', 'items-center', 'justify-center'],
+    content: ['container', 'pt-8', 'pb-12']
   }
 })
 
-export const headerContentStyle = tv({
-  base: ['flex flex-1', 'items-center', 'h-12', 'gap-4'],
+export const headerNavigationStyle = tv({
+  base: ['flex', 'flex-1', 'items-center', 'h-12', 'gap-4'],
   variants: {
     justify: {
       center: 'justify-center',
@@ -50,4 +51,12 @@ export const headerContentStyle = tv({
   }
 })
 
-export type HeaderContentVariants = VariantProps<typeof headerContentStyle>
+export type HeaderNavigationVariants = VariantProps<typeof headerNavigationStyle>
+
+export const headerContentItemStyle = tv({
+  base: ['text-3xl', 'md:text-xl', 'py-3', 'md:py-1', 'px-12', 'font-semibold'],
+  variants: {},
+  defaultVariants: {}
+})
+
+export type HeaderContentItemVariants = VariantProps<typeof headerContentItemStyle>
