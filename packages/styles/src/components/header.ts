@@ -36,7 +36,7 @@ export const headerSlotStyle = tv({
     wrapper: `flex md:container`,
     button: `${headerHeight} flex min-w-12 cursor-pointer items-center justify-center`,
     content: 'container py-4',
-    contentItem: 'px-12 py-3 text-3xl font-semibold md:py-1 md:text-xl'
+    contentItem: 'cursor-pointer px-12 py-3 text-3xl font-semibold md:py-1 md:text-xl'
   }
 })
 
