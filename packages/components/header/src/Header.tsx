@@ -1,4 +1,3 @@
-import { headerSlotsStyle } from '@suivante/styles'
 import { AnimatePresence, domAnimation, LazyMotion, m } from 'framer-motion'
 import { memo } from 'react'
 
@@ -9,18 +8,17 @@ import { useHeader } from './useHeader'
 export interface HeaderProps extends UseHeader {}
 
 const Header = (props: HeaderProps) => {
+  const { children } = props
   const context = useHeader(props)
 
   return (
     <HeaderProvider value={context}>
-      <LazyMotion features={domAnimation}>
+      <LazyMotion features={domAnimation} strict>
         <m.header {...context.state.headerProps}>
-          <div {...context.state.headerWrapperProps}>{props.children}</div>
-          <div className={headerSlotsStyle().content()}>
-            <AnimatePresence mode='popLayout'>
-              {context.state.isOpen && context.state.content}
-            </AnimatePresence>
-          </div>
+          <div {...context.state.headerWrapperProps}>{children}</div>
+          <m.div {...context.state.headerContentProps}>
+            <AnimatePresence mode='wait'>{context.state.content}</AnimatePresence>
+          </m.div>
         </m.header>
       </LazyMotion>
     </HeaderProvider>

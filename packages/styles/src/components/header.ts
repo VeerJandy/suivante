@@ -1,12 +1,14 @@
 import type { VariantProps } from 'tailwind-variants'
 import { tv } from 'tailwind-variants'
 
+const headerHeight = 'h-12'
+
 export const headerStyle = tv({
   base: [
     'fixed',
     'top-0',
     'w-full',
-    'h-12',
+    headerHeight,
     'z-40',
     'backdrop-saturate-[180%]',
     'backdrop-blur-xl',
@@ -29,21 +31,22 @@ export const headerStyle = tv({
 
 export type HeaderVariants = VariantProps<typeof headerStyle>
 
-export const headerSlotsStyle = tv({
+export const headerSlotStyle = tv({
   slots: {
-    wrapper: ['container', 'flex', 'gap-4', 'h-12'],
-    burger: ['z-40', 'relative', 'md:hidden', 'flex', 'size-12', 'items-center', 'justify-center'],
-    content: ['container', 'pt-8', 'pb-12']
+    wrapper: `flex md:container`,
+    button: `${headerHeight} flex min-w-12 cursor-pointer items-center justify-center`,
+    content: 'container py-4',
+    contentItem: 'px-12 py-3 text-3xl font-semibold md:py-1 md:text-xl'
   }
 })
 
-export const headerNavigationStyle = tv({
-  base: ['flex', 'flex-1', 'items-center', 'h-12', 'gap-4'],
+export const headerItemStyle = tv({
+  base: ['flex', 'flex-1', 'gap-0', 'md:gap-4'],
   variants: {
     justify: {
+      start: 'justify-start',
       center: 'justify-center',
-      end: 'justify-end',
-      start: 'justify-start'
+      end: 'justify-end'
     }
   },
   defaultVariants: {
@@ -51,12 +54,4 @@ export const headerNavigationStyle = tv({
   }
 })
 
-export type HeaderNavigationVariants = VariantProps<typeof headerNavigationStyle>
-
-export const headerContentItemStyle = tv({
-  base: ['text-3xl', 'md:text-xl', 'py-3', 'md:py-1', 'px-12', 'font-semibold'],
-  variants: {},
-  defaultVariants: {}
-})
-
-export type HeaderContentItemVariants = VariantProps<typeof headerContentItemStyle>
+export type HeaderItemVariants = VariantProps<typeof headerItemStyle>

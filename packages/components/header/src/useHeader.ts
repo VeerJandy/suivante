@@ -1,9 +1,8 @@
-import { dataAttr, durationMedium, easeMedium, useMobile } from '@suivante/react'
+import { dataAttr, transition, useMobile } from '@suivante/react'
 import type { HeaderVariants } from '@suivante/styles'
-import { headerSlotsStyle, headerStyle } from '@suivante/styles'
+import { headerSlotStyle, headerStyle } from '@suivante/styles'
 import type { ReactNode } from 'react'
-import { useState } from 'react'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 export interface UseHeader extends HeaderVariants {
   children: ReactNode
@@ -18,23 +17,30 @@ export const useHeader = (props: UseHeader) => {
   const headerProps = useMemo(
     () => ({
       className: headerStyle(props),
-      animate: { height: isOpen ? (isMobile ? '100vh' : 'fit-content') : 48 },
-      transition: {
-        ease: easeMedium,
-        duration: durationMedium
-      },
+      animate: { height: isOpen ? (isMobile ? '100vh' : 'auto') : 48 },
+      transition,
       'data-open': dataAttr(isOpen),
-      onMouseLeave: () => {
-        if (!isOpen) return
-        setContent(() => null)
-        setIsOpen(() => false)
-      }
+      onMouseLeave: isMobile
+        ? undefined
+        : () => {
+            if (!isOpen) return
+            setContent(() => null)
+            setIsOpen(() => false)
+          }
     }),
-    [isOpen]
+    [isOpen, isMobile]
   )
+
   const headerWrapperProps = useMemo(
     () => ({
-      className: headerSlotsStyle(props).wrapper()
+      className: headerSlotStyle(props).wrapper()
+    }),
+    []
+  )
+
+  const headerContentProps = useMemo(
+    () => ({
+      className: headerSlotStyle(props).content()
     }),
     []
   )
@@ -45,11 +51,12 @@ export const useHeader = (props: UseHeader) => {
       isOpen,
       isMobile,
       headerProps,
-      headerWrapperProps
+      headerWrapperProps,
+      headerContentProps
     },
     functions: {
       setIsOpen: (isOpen?: boolean) => setIsOpen(prev => isOpen ?? !prev),
-      setContent
+      setContent: (content?: ReactNode) => setContent(() => content ?? null)
     }
   }
 }
