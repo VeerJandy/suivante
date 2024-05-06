@@ -1,6 +1,6 @@
 'use client'
 
-import { Ref, RefObject, useImperativeHandle, useRef } from 'react'
+import { Ref, RefObject, useEffect, useImperativeHandle, useRef, useState } from 'react'
 
 import type { AnyObject } from './models'
 
@@ -12,6 +12,18 @@ export function useDOMRef<T extends HTMLElement = HTMLElement>(
   useImperativeHandle(ref, () => domRef.current)
 
   return domRef
+}
+
+export function useMobile() {
+  const [isMobile, setIsMobile] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    const match = matchMedia('(max-width: 768px)')
+    match.addEventListener('change', event => setIsMobile(event.matches))
+    setIsMobile(match.matches)
+  }, [])
+
+  return isMobile
 }
 
 export function getCookies(): AnyObject<string>

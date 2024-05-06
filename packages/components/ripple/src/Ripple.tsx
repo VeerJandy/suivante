@@ -29,7 +29,6 @@ const Ripple = (props: RippleProps) => {
               <LazyMotion features={domAnimation}>
                 <motion.span
                   animate={{ transform: 'scale(2)', opacity: 0 }}
-                  className='nextui-ripple'
                   exit={{ opacity: 0 }}
                   initial={{ transform: 'scale(0)', opacity: 0.35 }}
                   style={{

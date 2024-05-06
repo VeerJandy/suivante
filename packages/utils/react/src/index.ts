@@ -1,3 +1,7 @@
+export * from './animate'
+export * from './assertion'
+export * from './context'
 export * from './functions'
 export * from './functionsClient'
 export * from './models'
+export * from './setBodyLock'

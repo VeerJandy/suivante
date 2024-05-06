@@ -29,7 +29,8 @@
     "@suivante/button": "workspace:*",
     "@suivante/spinner": "workspace:*",
     "@suivante/ripple": "workspace:*",
-    "@suivante/theme": "workspace:*"
+    "@suivante/theme": "workspace:*",
+    "@suivante/header": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18",

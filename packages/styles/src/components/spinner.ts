@@ -3,7 +3,6 @@ import { tv } from 'tailwind-variants'
 
 export const spinnerStyle = tv({
   slots: {
-    base: 'relative inline-flex flex-col items-center justify-center gap-2',
     wrapper: 'relative flex size-5',
     circle: [
       'w-full',
